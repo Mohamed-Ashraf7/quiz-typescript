@@ -3,7 +3,7 @@ body {
   font-family: "Edu SA Beginner", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./img/one.jpg");
+  background-image: url("./image/image.jpg");
   background-size: cover;
   background-poistion: center;
   background-repeat: no-repeat;

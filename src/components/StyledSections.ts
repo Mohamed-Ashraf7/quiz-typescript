@@ -1,5 +1,4 @@
 import styled from "@mui/material/styles/styled";
-import one from "../img/one.jpg";
 
 import {
   Grid,
@@ -58,9 +57,7 @@ export const ModalContainer = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundImage: `url(${one})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
+
   zIndex: "9999",
 });
 

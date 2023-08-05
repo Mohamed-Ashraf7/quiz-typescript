@@ -49,7 +49,7 @@ function App() {
       return dispatch(setCorrect(correct + 1));
     }
     setSelectedAnswer(value);
-    setTimeout(handleIndex, 500);
+    setTimeout(handleIndex, 300);
   };
 
   const tempIndex = Math.floor(Math.random() * 4);

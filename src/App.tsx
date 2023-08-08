@@ -7,16 +7,24 @@ import { RootState } from "./store/store";
 import { setIndex, setCorrect } from "./store/QuizSlicer";
 import { Container, Box } from "@mui/material";
 import { useDispatch } from "react-redux";
+
 import {
   NextQuestionButton,
   CorrectAnswersParagraph,
   AnswerButton,
   AppSection,
 } from "./components/StyledSections";
+
 const HTMLContent = ({ content }: { content: string }) => (
   <div
     dangerouslySetInnerHTML={{ __html: content }}
-    style={{ fontSize: "2.4rem", textAlign: "center", margin: "3% 0" }}
+    style={{
+      textAlign: "center",
+      margin: "4% 0",
+      padding: "1.5rem 2rem",
+      backgroundColor: "#fdfdfd",
+      boxShadow: "2px 4px 3px -2px rgba(0,0,0,.8)",
+    }}
   />
 );
 function App() {
@@ -61,43 +69,50 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       {index === questions.length - 1 ? (
         <ModalApp />
       ) : (
-        <AppSection>
-          <CorrectAnswersParagraph>
-            correct answers : {correct}/{index}
-          </CorrectAnswersParagraph>
-          <Container>
-            <HTMLContent content={question} />
-            <Box className="btn-container">
-              {answers.map((answer, index) => {
-                return (
-                  <AnswerButton
-                    key={index}
-                    style={{
-                      background:
-                        selectedAnswer === answer
-                          ? answer === correct_answer
-                            ? "#0e7490"
-                            : "#dc2626"
-                          : "#0e7490",
-                    }}
-                    onClick={() => checkCorrectAnswer(answer)}
-                  >
-                    {answer}
-                  </AnswerButton>
-                );
-              })}
-            </Box>
-          </Container>
-          <NextQuestionButton onClick={() => handleIndex()}>
-            next question
-          </NextQuestionButton>
-        </AppSection>
+        <>
+          <AppSection>
+            <CorrectAnswersParagraph
+              sx={{
+                margin: { xs: "1% auto", md: "0% 74%" },
+                width: { xs: "90%", md: "24%" },
+              }}
+            >
+              correct answers : {correct}/{index}
+            </CorrectAnswersParagraph>
+            <Container sx={{ fontSize: { xs: "1.6rem", md: "2.6rem" } }}>
+              <HTMLContent content={question} />
+              <Box className="btn-container">
+                {answers.map((answer, index) => {
+                  return (
+                    <AnswerButton
+                      key={index}
+                      style={{
+                        background:
+                          selectedAnswer === answer
+                            ? answer === correct_answer
+                              ? "#0e7490"
+                              : "#dc2626"
+                            : "#0e7490",
+                      }}
+                      onClick={() => checkCorrectAnswer(answer)}
+                    >
+                      {answer}
+                    </AnswerButton>
+                  );
+                })}
+              </Box>
+            </Container>
+            <NextQuestionButton onClick={() => handleIndex()}>
+              next question
+            </NextQuestionButton>
+          </AppSection>
+        </>
       )}
-    </div>
+    </>
   );
 }
 

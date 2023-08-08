@@ -9,18 +9,20 @@ import {
   MenuItem,
 } from "@mui/material";
 // ********** intro form  ************
+
 export const QuizSection = styled(Grid)`
   width: 100%;
+    @media (max-width: 772px) {
+    height: calc(100vh - 76.16px);
+    padding: 10px;
+  }
 `;
 export const SetupForm = styled(Grid)({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  marginTop: "4.3rem",
-  padding: "3rem 0 ",
-  overflow: "hidden",
-  background:
-    "linear-gradient(180deg, rgba(255,255,255,0.4) 0% ,rgba(255,255,255,0.4) 35%, rgba(255,255,255,0.4) 100%)",
+  flexGrow: 0,
+  overflowX: "hidden",
   backdropFilter: "blur(3px)",
   WebkitBackdropFilter: "blur(3px)",
 });
@@ -33,8 +35,6 @@ export const StyledTypography = styled(Typography)({
     "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
 });
 export const Inputlabel = styled(InputLabel)({
-  fontSize: "2.3rem",
-  padding: "10px",
   color: "#222",
   fontWeight: 500,
 });
@@ -49,15 +49,12 @@ export const Menuitem = styled(MenuItem)({
 // ********** Modal component ************
 
 export const ModalContainer = styled("div")({
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
+  overflowX: "hidden",
+  width: "100vw",
+  height: "100vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-
   zIndex: "9999",
 });
 
@@ -65,17 +62,13 @@ export const ModalContent = styled("div")({
   background: "rgba(255, 255, 255, .5)",
   backdropFilter: "blur(2px)",
   WebkitBackdropFilter: "blur(2px)",
-  width: "90vw",
-  height: "52%",
+  width: "80%",
   display: "flex",
   flexFlow: "column",
   alignItems: "center",
   justifyContent: "center",
-  maxWidth: "720px",
-  padding: "3.2rem",
   fontSize: "2.4rem",
   borderRadius: "0.25rem",
-  position: "relative",
   boxShadow: "4px 4px 5px #444",
 });
 
@@ -90,7 +83,7 @@ export const AppSection = styled("section")({
   display: "flex",
   flexFlow: "column",
   alignItems: "center",
-  overflow: "hidden",
+  overflowX: "hidden",
   background:
     "linear-gradient(180deg, rgba(250,250,250,0.4) 0% ,rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.4) 100%)",
   backdropFilter: "blur(2px)",
@@ -108,6 +101,7 @@ export const AnswerButton = styled(Button)({
   cursor: "pointer",
   padding: "0.6rem 0",
   transition: "all 0.3s linear",
+  
   "&:hover": {
     backgroundColor: "#0e7490",
     color: "#222",
@@ -117,15 +111,13 @@ export const AnswerButton = styled(Button)({
 export const CorrectAnswersParagraph = styled("p")({
   fontSize: "1.3rem",
   alignSelf: "start",
-  margin: "1% 74%",
   textAlign: "center",
-  padding: ".35rem",
+  padding: ".45rem",
   textTransform: "capitalize",
   letterSpacing: "0.1rem",
   color: "#fff",
   backgroundColor: "rgba(0,0,0,.6)",
   backdropFilter: "blur(4px)",
-  width: "24%",
 });
 
 export const NextQuestionButton = styled(Button)({

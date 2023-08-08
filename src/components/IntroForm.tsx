@@ -19,8 +19,19 @@ const selectStyle = {
   borderBottom: "7px solid #0e7490",
   borderRadius: "5px",
   paddingX: "20px",
-  fontSize: "1.6rem",
+
+  fontSize: { xs: "1.2rem", md: "1.9rem" },
   color: "#000",
+};
+const responsive = {
+  background: {
+    xs: "#fdfdfd",
+    md: "linear-gradient(180deg, rgba(255,255,255,0.4) 0% ,rgba(255,255,255,0.4) 35%, rgba(255,255,255,0.4) 100%)",
+  },
+  flexFlow: { xs: "column", md: "row" },
+  marginTop: { xs: ".7rem", md: "4.3rem" },
+  padding: { xs: "1rem 0", md: "3rem 0" },
+  gap: { xs: ".5rem", md: "2rem" },
 };
 const table: TableType = {
   general: 9,
@@ -63,9 +74,16 @@ const IntroForm = () => {
   return (
     <>
       <StyledTypography variant="h2">Quiz APP</StyledTypography>
-      <QuizSection container>
-        <SetupForm item xs={12} lg={4}>
-          <Inputlabel htmlFor="amount">Number Of Questions :</Inputlabel>
+      <QuizSection container justifyContent="center" alignItems="center">
+        <SetupForm item xs={12} sx={responsive}>
+          <Inputlabel
+            sx={{
+              fontSize: { xs: "1.8rem", md: "2.1rem" },
+            }}
+            htmlFor="amount"
+          >
+            Number Of Questions :
+          </Inputlabel>
           <Textfield
             type="number"
             name="amount"
@@ -77,9 +95,15 @@ const IntroForm = () => {
               max: 50,
             }}
           />
-        </SetupForm>
-        <SetupForm item xs={12} lg={4}>
-          <Inputlabel htmlFor="category">Category : </Inputlabel>
+
+          <Inputlabel
+            sx={{
+              fontSize: { xs: "1.8rem", md: "2.3rem" },
+            }}
+            htmlFor="category"
+          >
+            Category :{" "}
+          </Inputlabel>
           <Select
             sx={selectStyle}
             name="category"
@@ -94,9 +118,15 @@ const IntroForm = () => {
             <Menuitem value="computers">Computers</Menuitem>
             <Menuitem value="geography">Geography</Menuitem>
           </Select>
-        </SetupForm>
-        <SetupForm item xs={12} lg={4}>
-          <Inputlabel htmlFor="difficulty">Difficulty : </Inputlabel>
+
+          <Inputlabel
+            sx={{
+              fontSize: { xs: "1.8rem", md: "2.3rem" },
+            }}
+            htmlFor="difficulty"
+          >
+            Difficulty :{" "}
+          </Inputlabel>
           <Select
             sx={selectStyle}
             name="difficulty"
@@ -110,13 +140,13 @@ const IntroForm = () => {
           </Select>
         </SetupForm>
         {error && <p>Can't generate questions, please try different options</p>}
-        <SetupForm item xs={12}>
+        <SetupForm item xs={12} sx={responsive}>
           <Button
             type="submit"
             sx={{
               width: "50%",
-              fontSize: "3rem",
-              padding: "15px",
+              fontSize: { xs: "2rem", md: "3rem" },
+              padding: { xs: ".5rem", md: "1rem" },
             }}
             onClick={handleSubmit}
             variant="contained"

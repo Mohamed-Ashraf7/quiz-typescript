@@ -15,24 +15,22 @@ const ModalApp = () => {
   };
 
   return (
-    <div>
-      <ModalContainer>
-        <ModalContent>
-          <h2>Congrats!</h2>
-          <p>
-            You answered {((correct / questions.length) * 100).toFixed(0)}% of
-            questions correctly
-          </p>
-          <Button
-            sx={{ fontSize: "2.5rem" }}
-            onClick={handlePlayAgain}
-            variant="contained"
-          >
-            play again
-          </Button>
-        </ModalContent>
-      </ModalContainer>
-    </div>
+    <ModalContainer>
+      <ModalContent sx={{ padding: { xs: "1rem", md: "3.2rem" } }}>
+        <h2>Congrats!</h2>
+        <p>
+          You answered {((correct / questions.length) * 100).toFixed(0)}% of
+          questions correctly
+        </p>
+        <Button
+          sx={{ fontSize: "2.5rem" }}
+          onClick={handlePlayAgain}
+          variant="contained"
+        >
+          play again
+        </Button>
+      </ModalContent>
+    </ModalContainer>
   );
 };
 

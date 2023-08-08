@@ -12,7 +12,7 @@ import {
 
 export const QuizSection = styled(Grid)`
   width: 100%;
-    @media (max-width: 772px) {
+  @media (max-width: 772px) {
     height: calc(100vh - 76.16px);
     padding: 10px;
   }
@@ -32,7 +32,7 @@ export const StyledTypography = styled(Typography)({
   color: "white",
   padding: ".5% 0",
   boxShadow:
-    "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
+    "0px 7px 4px -2px rgba(0,0,0,0.6), 0px 4px 4px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
 });
 export const Inputlabel = styled(InputLabel)({
   color: "#222",
@@ -41,7 +41,7 @@ export const Inputlabel = styled(InputLabel)({
 export const Textfield = styled(TextField)({
   borderBottom: "7px solid #0e7490",
   borderRadius: "9px",
-  padding: "5px",
+  padding: "5px 40px",
 });
 export const Menuitem = styled(MenuItem)({
   fontSize: "1.3rem",
@@ -101,7 +101,7 @@ export const AnswerButton = styled(Button)({
   cursor: "pointer",
   padding: "0.6rem 0",
   transition: "all 0.3s linear",
-  
+
   "&:hover": {
     backgroundColor: "#0e7490",
     color: "#222",

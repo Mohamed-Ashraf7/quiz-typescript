@@ -18,9 +18,8 @@ interface TableType {
 const selectStyle = {
   borderBottom: "7px solid #0e7490",
   borderRadius: "5px",
-  paddingX: "20px",
-
-  fontSize: { xs: "1.2rem", md: "1.9rem" },
+  paddingX: "40px",
+  fontSize: { xs: "1.3rem", md: "1.9rem" },
   color: "#000",
 };
 const responsive = {
@@ -78,7 +77,7 @@ const IntroForm = () => {
         <SetupForm item xs={12} sx={responsive}>
           <Inputlabel
             sx={{
-              fontSize: { xs: "1.8rem", md: "2.1rem" },
+              fontSize: { xs: "1.9rem", md: "2.1rem" },
             }}
             htmlFor="amount"
           >
@@ -98,7 +97,7 @@ const IntroForm = () => {
 
           <Inputlabel
             sx={{
-              fontSize: { xs: "1.8rem", md: "2.3rem" },
+              fontSize: { xs: "1.9rem", md: "2.3rem" },
             }}
             htmlFor="category"
           >
@@ -121,7 +120,7 @@ const IntroForm = () => {
 
           <Inputlabel
             sx={{
-              fontSize: { xs: "1.8rem", md: "2.3rem" },
+              fontSize: { xs: "1.9rem", md: "2.3rem" },
             }}
             htmlFor="difficulty"
           >
@@ -140,7 +139,18 @@ const IntroForm = () => {
           </Select>
         </SetupForm>
         {error && <p>Can't generate questions, please try different options</p>}
-        <SetupForm item xs={12} sx={responsive}>
+        <SetupForm
+          item
+          xs={12}
+          sx={{
+            background: {
+              xs: "#fdfdfd",
+              md: "linear-gradient(180deg, rgba(255,255,255,0.4) 0% ,rgba(255,255,255,0.4) 35%, rgba(255,255,255,0.4) 100%)",
+            },
+            marginTop: { xs: "-1.8rem", md: "4.3rem" },
+            padding: { xs: "1rem 0", md: "3rem 0" },
+          }}
+        >
           <Button
             type="submit"
             sx={{

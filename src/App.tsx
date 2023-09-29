@@ -57,9 +57,9 @@ function App() {
       return dispatch(setCorrect(correct + 1));
     }
     setSelectedAnswer(value);
-    setTimeout(handleIndex, 300);
+    setTimeout(handleIndex, 100);
   };
-
+  console.log("app one ");
   const tempIndex = Math.floor(Math.random() * 4);
   if (tempIndex === 3) {
     answers.push(correct_answer);

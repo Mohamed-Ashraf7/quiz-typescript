@@ -17,19 +17,21 @@ interface TableType {
 }
 const selectStyle = {
   borderBottom: "7px solid #0e7490",
-  borderRadius: "5px",
-  paddingX: "40px",
-  fontSize: { xs: "1.3rem", md: "1.9rem" },
+  borderRadius: "15%",
+  paddingX: "20px",
+  fontSize: { xs: "1.3rem", md: "1.6rem" },
   color: "#000",
 };
 const responsive = {
-  background: {
-    xs: "#fdfdfd",
-    md: "linear-gradient(180deg, rgba(255,255,255,0.4) 0% ,rgba(255,255,255,0.4) 35%, rgba(255,255,255,0.4) 100%)",
-  },
+  background: "rgba(255,255,255,.8)",
+  borderRadius: ".4rem",
+  borderBottom: ".7rem solid #222",
+  backdropFilter: "blur(1px)",
+  WebkitBackdropFilter: "blur(2px)",
+  boxShadow: "10px 15px 4px #000",
   flexFlow: { xs: "column", md: "row" },
-  marginTop: { xs: ".7rem", md: "4.3rem" },
-  padding: { xs: "1rem 0", md: "3rem 0" },
+  marginTop: { xs: ".7rem", md: "5.8rem" },
+  padding: { xs: "1rem 0", md: "6rem 0" },
   gap: { xs: ".5rem", md: "2rem" },
 };
 const table: TableType = {
@@ -69,19 +71,23 @@ const IntroForm = () => {
     const { name, value } = e.target;
     dispatch(setQuiz({ ...quiz, [name]: value }));
   };
-
   return (
     <>
-      <StyledTypography variant="h2">Quiz APP</StyledTypography>
+      <StyledTypography
+        variant="h2"
+        sx={{ fontSize: { xs: "1.9rem", md: "3.7rem" } }}
+      >
+        Be Creative and Check Your Information
+      </StyledTypography>
       <QuizSection container justifyContent="center" alignItems="center">
         <SetupForm item xs={12} sx={responsive}>
           <Inputlabel
             sx={{
-              fontSize: { xs: "1.9rem", md: "2.1rem" },
+              fontSize: { xs: "1.9rem", md: "2rem" },
             }}
             htmlFor="amount"
           >
-            Number Of Questions :
+            Num of Questions :
           </Inputlabel>
           <Textfield
             type="number"
@@ -97,7 +103,7 @@ const IntroForm = () => {
 
           <Inputlabel
             sx={{
-              fontSize: { xs: "1.9rem", md: "2.3rem" },
+              fontSize: { xs: "1.9rem", md: "2rem" },
             }}
             htmlFor="category"
           >
@@ -120,7 +126,7 @@ const IntroForm = () => {
 
           <Inputlabel
             sx={{
-              fontSize: { xs: "1.9rem", md: "2.3rem" },
+              fontSize: { xs: "1.9rem", md: "2rem" },
             }}
             htmlFor="difficulty"
           >
@@ -143,20 +149,21 @@ const IntroForm = () => {
           item
           xs={12}
           sx={{
-            background: {
-              xs: "#fdfdfd",
-              md: "linear-gradient(180deg, rgba(255,255,255,0.4) 0% ,rgba(255,255,255,0.4) 35%, rgba(255,255,255,0.4) 100%)",
-            },
-            marginTop: { xs: "-1.8rem", md: "4.3rem" },
-            padding: { xs: "1rem 0", md: "3rem 0" },
+            marginTop: { xs: "0rem", md: "0rem" },
+            padding: { xs: "1rem 0", md: "1.6rem 0" },
           }}
         >
           <Button
             type="submit"
             sx={{
-              width: "50%",
-              fontSize: { xs: "2rem", md: "3rem" },
-              padding: { xs: ".5rem", md: "1rem" },
+              width: {
+                xs: "70%",
+                md: "40%",
+              },
+              borderRadius: ".4rem",
+              boxShadow: "8px 8px 4px #222",
+              fontSize: { xs: "2rem", md: "2.5rem" },
+              padding: { xs: ".5rem", md: ".5rem" },
             }}
             onClick={handleSubmit}
             variant="contained"

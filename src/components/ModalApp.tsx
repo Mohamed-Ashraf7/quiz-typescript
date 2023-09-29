@@ -7,7 +7,6 @@ import { ModalContainer, ModalContent } from "./StyledSections";
 const ModalApp = () => {
   const dispatch = useDispatch();
   const { correct, questions } = useSelector((state: RootState) => state.quiz);
-
   const handlePlayAgain = () => {
     dispatch(closeModal());
     dispatch(setIndex(0));
@@ -23,7 +22,7 @@ const ModalApp = () => {
           questions correctly
         </p>
         <Button
-          sx={{ fontSize: "2.5rem" }}
+          sx={{ fontSize: { xs: "1.9rem", md: "2.6rem" } }}
           onClick={handlePlayAgain}
           variant="contained"
         >

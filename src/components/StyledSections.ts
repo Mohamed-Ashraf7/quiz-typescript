@@ -11,8 +11,10 @@ import {
 // ********** intro form  ************
 
 export const QuizSection = styled(Grid)`
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   @media (max-width: 772px) {
+    width: 98%;
     height: calc(100vh - 76.16px);
     padding: 10px;
   }
@@ -28,20 +30,27 @@ export const SetupForm = styled(Grid)({
 });
 export const StyledTypography = styled(Typography)({
   textAlign: "center",
-  backgroundColor: "#1e4e63",
-  color: "white",
-  padding: ".5% 0",
+  width: "98%",
+  margin: "0 auto",
+  background: "rgba(255,255,255,.9)",
+  backdropFilter: "blur(2px)",
+  WebkitBackdropFilter: "blur(2px)",
+  color: "#333",
+  padding: "2% 0",
+  borderBottomRightRadius: "12rem",
+  borderBottomLeftRadius: "12rem",
+  borderBottom: ".7rem solid #444",
   boxShadow:
     "0px 7px 4px -2px rgba(0,0,0,0.6), 0px 4px 4px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
 });
 export const Inputlabel = styled(InputLabel)({
-  color: "#222",
+  color: "#111",
   fontWeight: 500,
 });
 export const Textfield = styled(TextField)({
   borderBottom: "7px solid #0e7490",
-  borderRadius: "9px",
-  padding: "5px 40px",
+  borderRadius: "15%",
+  padding: "5px 10px",
 });
 export const Menuitem = styled(MenuItem)({
   fontSize: "1.3rem",
@@ -59,13 +68,14 @@ export const ModalContainer = styled("div")({
 });
 
 export const ModalContent = styled("div")({
-  background: "rgba(255, 255, 255, .5)",
+  background: "rgba(255, 255, 255, .9)",
   backdropFilter: "blur(2px)",
   WebkitBackdropFilter: "blur(2px)",
-  width: "80%",
+  width: "70%",
   display: "flex",
   flexFlow: "column",
   alignItems: "center",
+  textAlign: "center",
   justifyContent: "center",
   fontSize: "2.4rem",
   borderRadius: "0.25rem",

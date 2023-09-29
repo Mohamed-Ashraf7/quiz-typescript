@@ -23,14 +23,14 @@ const selectStyle = {
   color: "#000",
 };
 const responsive = {
-  background: "rgba(255,255,255,.9)",
+  background: "rgba(255,255,255,.8)",
   borderRadius: ".4rem",
   borderBottom: ".7rem solid #222",
   backdropFilter: "blur(1px)",
   WebkitBackdropFilter: "blur(1px)",
   boxShadow: "10px 15px 4px #000",
   flexFlow: { xs: "column", md: "row" },
-  marginTop: { xs: ".4rem", md: "5.8rem" },
+  marginTop: { xs: "-.3rem", md: "5.8rem" },
   padding: { xs: "1rem 0", md: "6rem 0" },
   gap: { xs: ".5rem", md: "2rem" },
 };
@@ -149,7 +149,7 @@ const IntroForm = () => {
           item
           xs={12}
           sx={{
-            marginTop: { xs: "-.7rem", md: "0rem" },
+            marginTop: { xs: "-1rem", md: "0rem" },
             padding: { xs: "1rem 0", md: "1.6rem 0" },
           }}
         >

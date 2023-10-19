@@ -7,7 +7,6 @@ import { RootState } from "./store/store";
 import { setIndex, setCorrect } from "./store/QuizSlicer";
 import { Container, Box } from "@mui/material";
 import { useDispatch } from "react-redux";
-
 import {
   NextQuestionButton,
   CorrectAnswersParagraph,
@@ -39,7 +38,6 @@ function App() {
   if (loading) {
     return <Loading />;
   }
-
   const handleIndex = () => {
     if (index === questions.length - 1) {
       return dispatch(setIndex(0));
@@ -47,7 +45,6 @@ function App() {
       return dispatch(setIndex(index + 1));
     }
   };
-
   const { incorrect_answers, question, correct_answer } = questions[index];
   const answers = [...incorrect_answers];
 
@@ -57,9 +54,8 @@ function App() {
       return dispatch(setCorrect(correct + 1));
     }
     setSelectedAnswer(value);
-    setTimeout(handleIndex, 100);
+   handleIndex();
   };
-  console.log("app one ");
   const tempIndex = Math.floor(Math.random() * 4);
   if (tempIndex === 3) {
     answers.push(correct_answer);
@@ -83,7 +79,7 @@ function App() {
             >
               correct answers : {correct}/{index}
             </CorrectAnswersParagraph>
-            <Container sx={{ fontSize: { xs: "1.6rem", md: "2.6rem" } }}>
+            <Container sx={{ fontSize: { xs: "1.6rem", md: "2rem" } }}>
               <HTMLContent content={question} />
               <Box className="btn-container">
                 {answers.map((answer, index) => {

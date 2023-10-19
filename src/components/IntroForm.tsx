@@ -8,32 +8,12 @@ import {
   StyledTypography,
   Inputlabel,
   Textfield,
-  Menuitem,
+  Menuitem,selectStyle,responsive
 } from "./StyledSections";
 import { Button, Select, SelectChangeEvent } from "@mui/material";
-
 interface TableType {
   [key: string]: number;
 }
-const selectStyle = {
-  borderBottom: "7px solid #0e7490",
-  borderRadius: "15%",
-  paddingX: "20px",
-  fontSize: { xs: "1.3rem", md: "1.6rem" },
-  color: "#000",
-};
-const responsive = {
-  background: "rgba(255,255,255,.8)",
-  borderRadius: ".4rem",
-  borderBottom: ".7rem solid #222",
-  backdropFilter: "blur(1px)",
-  WebkitBackdropFilter: "blur(1px)",
-  boxShadow: "10px 15px 4px #000",
-  flexFlow: { xs: "column", md: "row" },
-  marginTop: { xs: "-.3rem", md: "5.8rem" },
-  padding: { xs: "1rem 0", md: "6rem 0" },
-  gap: { xs: ".5rem", md: "2rem" },
-};
 const table: TableType = {
   general: 9,
   sports: 21,
@@ -42,20 +22,16 @@ const table: TableType = {
   computers: 18,
   geography: 22,
 };
-
 const API_ENDPOINT = "https://opentdb.com/api.php?";
-
 const IntroForm = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { quiz, error } = useSelector((state: RootState) => state.quiz);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { amount, category, difficulty } = quiz;
     const url = `${API_ENDPOINT}amount=${amount}&category=${table[category]}&difficulty=${difficulty}&type=multiple`;
     dispatch(fetchQuestions(url));
   };
-
   const handleChangeString = (
     event: SelectChangeEvent<string>,
     child: React.ReactNode
@@ -74,17 +50,14 @@ const IntroForm = () => {
   return (
     <>
       <StyledTypography
-        variant="h2"
-        sx={{ fontSize: { xs: "1.9rem", md: "3.7rem" } }}
+        variant="h1"
+        sx={{ fontSize: { xs: "1.7rem", md: "3rem" } }}
       >
         Be Creative and Check Your Information
       </StyledTypography>
       <QuizSection container justifyContent="center" alignItems="center">
         <SetupForm item xs={12} sx={responsive}>
           <Inputlabel
-            sx={{
-              fontSize: { xs: "1.9rem", md: "2rem" },
-            }}
             htmlFor="amount"
           >
             Num of Questions :
@@ -100,12 +73,8 @@ const IntroForm = () => {
               max: 50,
             }}
           />
-
           <Inputlabel
-            sx={{
-              fontSize: { xs: "1.9rem", md: "2rem" },
-            }}
-            htmlFor="category"
+            htmlFor="Category"
           >
             Category :{" "}
           </Inputlabel>
@@ -123,11 +92,7 @@ const IntroForm = () => {
             <Menuitem value="computers">Computers</Menuitem>
             <Menuitem value="geography">Geography</Menuitem>
           </Select>
-
           <Inputlabel
-            sx={{
-              fontSize: { xs: "1.9rem", md: "2rem" },
-            }}
             htmlFor="difficulty"
           >
             Difficulty :{" "}
@@ -149,7 +114,7 @@ const IntroForm = () => {
           item
           xs={12}
           sx={{
-            marginTop: { xs: "-1rem", md: "0rem" },
+            marginTop: { xs: "-1rem", md: ".5rem" },
             padding: { xs: "1rem 0", md: "1.6rem 0" },
           }}
         >
@@ -163,7 +128,7 @@ const IntroForm = () => {
               borderRadius: ".4rem",
               boxShadow: "8px 8px 4px #222",
               fontSize: { xs: "2rem", md: "2.5rem" },
-              padding: { xs: ".5rem", md: ".5rem" },
+              padding: ".5rem",
             }}
             onClick={handleSubmit}
             variant="contained"

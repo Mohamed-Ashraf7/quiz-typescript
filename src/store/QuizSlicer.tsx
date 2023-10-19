@@ -1,34 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-interface QuizItem {
-  category: string;
-  type: string;
-  difficulty: string;
-  question: string;
-  correct_answer: string;
-  incorrect_answers: any[];
-}
-
-interface QuizState {
-  waiting: boolean;
-  loading: boolean;
-  questions: QuizItem[];
-  index: number;
-  correct: number;
-  error: boolean;
-  quiz: {
-    amount: number;
-    category:
-      | "general"
-      | "sports"
-      | "history"
-      | "politics"
-      | "computers"
-      | "geography";
-    difficulty: "easy" | "medium" | "difficult";
-  };
-}
+import { QuizItem, QuizState } from "../interfaces";
 
 const initialState: QuizState = {
   waiting: true,
@@ -43,7 +15,6 @@ const initialState: QuizState = {
     difficulty: "easy",
   },
 };
-
 export const fetchQuestions = createAsyncThunk(
   "quiz/fetchQuestions",
   async (url: string) => {

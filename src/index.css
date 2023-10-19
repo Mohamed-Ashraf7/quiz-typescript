@@ -1,19 +1,13 @@
 body {
   margin: 0;
-  font-family: "Edu SA Beginner", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("./image/rishabh-sharma-R-js25Pv1LQ-unsplash.jpg") no-repeat;
-
+  background: url("./image/back.jpg") no-repeat;
   width: 100vw;
   min-height: 100vh;
   background-position: center center;
   background-size: cover;
   overflow-x: hidden;
-}
-
-code {
-  font-family: "Edu SA Beginner", cursive;
 }
 #amount {
   padding: 0.7rem 2rem;

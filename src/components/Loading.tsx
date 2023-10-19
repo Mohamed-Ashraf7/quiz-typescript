@@ -8,7 +8,6 @@ const StyledLoader = styled(Box)(({ theme }) => ({
   alignItems: "center",
   height: "100vh",
 }));
-
 const StyledLoaderSpan = styled("span")(({ theme }) => ({
   height: theme.spacing(9),
   width: theme.spacing(9),

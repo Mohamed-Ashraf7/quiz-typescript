@@ -1,7 +1,6 @@
-// store.ts
+
 import { configureStore } from "@reduxjs/toolkit";
 import quizReducer from "./QuizSlicer";
-
 const store = configureStore({
   reducer: {
     quiz: quizReducer,

@@ -2,7 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("./image/back.webp") no-repeat;
+  background: url("./image/back.jpg") no-repeat;
   width: 100vw;
   min-height: 100vh;
   background-position: center center;
